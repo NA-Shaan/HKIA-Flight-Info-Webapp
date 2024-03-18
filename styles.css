@@ -1,0 +1,512 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-size: 18px;
+}
+
+/* https://github.com/NA-Shaan */
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background-image: linear-gradient(90deg, rgba(205, 253, 254, 0.3) 0%, rgba(128, 225, 255, 0.6) 35%, rgba(0, 224, 251, 0.9) 100%);
+  position: relative;
+  background-attachment: fixed;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.boxes div {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: 6px solid rgba(255, 255, 255, 0.8);
+}
+
+.boxes div:nth-child(1) {
+  top: 12%;
+  left: 42%;
+  animation: animate 10s linear infinite;
+}
+
+.boxes div:nth-child(2) {
+  top: 70%;
+  left: 50%;
+  animation: animate 7s linear infinite;
+}
+
+.boxes div:nth-child(3) {
+  top: 17%;
+  left: 6%;
+  animation: animate 9s linear infinite;
+}
+
+.boxes div:nth-child(4) {
+  top: 20%;
+  left: 60%;
+  animation: animate 10s linear infinite;
+}
+
+.boxes div:nth-child(5) {
+  top: 67%;
+  left: 10%;
+  animation: animate 6s linear infinite;
+}
+
+.boxes div:nth-child(6) {
+  top: 80%;
+  left: 70%;
+  animation: animate 12s linear infinite;
+}
+
+.boxes div:nth-child(7) {
+  top: 60%;
+  left: 80%;
+  animation: animate 15s linear infinite;
+}
+
+.boxes div:nth-child(8) {
+  top: 32%;
+  left: 25%;
+  animation: animate 16s linear infinite;
+}
+
+.boxes div:nth-child(9) {
+  top: 90%;
+  left: 25%;
+  animation: animate 9s linear infinite;
+}
+
+.boxes div:nth-child(10) {
+  top: 20%;
+  left: 80%;
+  animation: animate 5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.3) translateY(-90px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.wrapper {
+  margin: 0 5px;
+}
+
+.center {
+  text-align: center;
+}
+
+h1 {
+  color: rgba(0, 67, 112, 1);
+  padding: 5px;
+}
+h2 {
+  padding-bottom: 10px;
+}
+h4 {
+  padding-bottom: 5px;
+}
+
+.date-picked {
+  position: relative;
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+#month {
+  font-size: 1rem;
+  padding: 5px 0;
+}
+
+.picked {
+  appearance: none;
+  font-family: Monaco, monospace;
+  width: 110px;
+  font-weight: bold;
+  font-size: inherit;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  background: none;
+}
+
+.picked:focus {
+  outline: black;
+}
+
+#tooltiptext {
+  margin-left: 10px;
+  width: 270px;
+  min-height: 50px;
+  display: inline-block;
+  position: absolute;
+  transform: translateX(0px);
+  background-color: rgba(0, 67, 112, 1);
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+#tooltiptext:before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: 100%;
+  transform: translateY(-50%);
+  border: 8px solid;
+  border-color: transparent rgba(0, 67, 112, 1) transparent transparent;
+}
+
+.date-picker-calender {
+  width: 100%;
+  height: 80%;
+}
+
+.date-picker-calender td {
+  cursor: pointer;
+  text-align: center;
+}
+.date-picker-calender td:hover {
+  border-radius: 10px;
+  background-color: rgb(237, 237, 237);
+}
+
+.cal-container {
+  font-family: Monaco, monospace;
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.8s ease;
+}
+
+#cal-container {
+  display: inline-flex;
+  background-color: #06e3c550;
+  width: 260px;
+  height: 290px;
+  border: 2px solid #1a3c5c;
+  border-radius: 10px;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#calender-header {
+  display: inline-flex;
+  justify-content: space-between;
+  background-color: #1a3c5c;
+  width: 100%;
+  color: #fff;
+}
+
+.cal-button {
+  font-family: Monaco, monospace;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  padding: 0 15px;
+  margin: 0 5px;
+}
+
+.date-picker-calender .notinRange:hover, 
+.date-picker-calender .notinRange.selected {
+  border-radius: 10px;
+  background-color: #ff7676;
+  color: #fff;
+}
+
+.date-picker-calender .selected {
+  border-radius: 10px;
+  background-color: rgb(237, 237, 237);
+}
+
+.today {
+  border-radius: 10px;
+  background-color: #1a3c5c6a;
+  color: #fff;
+}
+
+.today:hover {
+  color: black;
+}
+
+.date-picker-calender .emptycell:hover {
+  background-color: transparent;
+  cursor: initial;
+}
+
+.date-picker-calender .selectedcell {
+  border-radius: 10px;
+  background-color: rgb(237, 237, 237);
+}
+
+.cal-footer {
+  display: inline-block;
+  width: 100%;
+}
+
+.search-but {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background: none;
+  cursor: pointer;
+  transition: 0.7s;
+  position: relative;
+  overflow: hidden;
+}
+
+.search-but:hover {
+  color: white;
+}
+
+.search-but::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  z-index: -1;
+  background: rgba(0, 67, 112, 1);
+  transition: 0.5s;
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.search-but:hover::before {
+  height: 180%;
+}
+
+@keyframes scrollLeft {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes scrollRight {
+    from {
+      transform: translateX(-100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  .scroll-left {
+    animation: scrollLeft 0.5s;
+  }
+  
+  .scroll-right {
+    animation: scrollRight 0.5s;
+  }
+
+  .stats {
+    display: flex;
+  }
+  
+  .stats-section {
+    flex: 1;
+    width: 50%;
+  }
+
+  .header-info td span {
+    margin-left: 10px;
+  }
+
+  .section-header {
+    width: 200px;
+    display: inline-block;
+    border: 5px double black;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 5px 0;
+  }
+
+  .toptendata {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .toptendata td {
+    text-align: center;
+    padding: 5px;
+  }
+
+  .toptendata tr {
+    text-align: center;
+  }
+
+  .toptendata .left {
+    text-align: left;
+  }
+
+  .bar .bar-inner {
+    height: 20px; 
+    background-color: rgba(0, 78, 131, 0.503); 
+    border: 1px solid red;
+    position: relative;
+    overflow: hidden;
+    transition: width 2s ease;
+  }
+
+  #histogramdep {
+    margin-bottom: 22px;
+  }
+
+  .right {
+    text-align: right;
+    padding-right: 5px;
+    width: 30px;
+  }
+
+  .cell-padding {
+    padding-left: 5px;
+  }
+
+  .main-section {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+  }
+  
+  .visible {
+    opacity: 1;
+  }
+
+  #warning {
+    background: #ff9b9b;
+    padding: 20px 40px;
+    min-width: 300px;
+    position: fixed;
+    right: 0;
+    top: 10px;
+    border-radius: 4px;
+    border-left: 8px solid #ff0202;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+  }
+
+  #warning.showAlert {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  #warning.show {
+    animation: show_slide 1s ease forwards;
+  }
+
+  @keyframes show_slide {
+    0%{
+      transform: translateX(100%);
+    }
+    40%{
+      transform: translateX(-10%);
+    }
+    80%{
+      transform: translateX(0%);
+    }
+    100%{
+      transform: translateX(-10px);
+    }
+  }  
+
+  #warning.hide {
+    animation: hide_slide 1s ease forwards;
+  }
+
+  @keyframes hide_slide {
+    0%{
+      transform: translateX(-10px);
+    }
+    40%{
+      transform: translateX(0%);
+    }
+    80%{
+      transform: translateX(-10%);
+    }
+    100%{
+      transform: translateX(100%);
+    }
+  }
+
+  #cal-div.shake {
+    animation: shake 0.5s;
+  }
+
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(10px); }
+    20%, 40%, 60%, 80% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+  }
+
+  @media only screen and (min-width: 350px) and (max-width: 500px) {
+    html {
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      box-shadow: none !important;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+    .stats {
+      display: block;
+      width: 100%;
+    }
+    
+    .stats-section {
+      width: 100%;
+    }
+
+    .section-header {
+      margin: 10px 0;
+    }
+
+    #tooltiptext {
+      top: -100%;
+      right: -10%;
+      display: flex;
+    }
+    
+    #tooltiptext:before {
+      top: 110%;
+      right: 30%;
+      border-color: rgba(0, 67, 112, 1) transparent transparent transparent;
+    }
+    
+    #warning {
+      min-width: 150px;
+    }
+  }

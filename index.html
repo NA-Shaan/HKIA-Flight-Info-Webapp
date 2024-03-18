@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HKIA Flight Info</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- https://github.com/NA-Shaan -->
+  </head>
+  <body>
+    <div class="container">
+        <div class="boxes">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="wrapper">
+            <header class="center">
+                <h1>Hong Kong International Airport Flight Information</h1>
+                <p class="date-picked">
+                    Date of Flight: 
+                    <input type="text" class="picked" id="picked" placeholder="YYYY-MM-DD">
+                    <span id="tooltiptext"></span>
+                </p>
+                <div class="cal-container" id="cal-div">
+                  <div class="center" id="cal-container">
+                      <div id="calender-header">
+                        <button class="cal-button" id="prev-month"><</button>
+                        <h3 id="month"></h3>
+                        <button class="cal-button" id="next-month">></button>
+                      </div>
+                      <table class="date-picker-calender">
+                        <thead>
+                          <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                          </tr>
+                        </thead>
+                        <tbody id="calendar"></tbody>
+                      </table>
+                      <div class="cal-footer">
+                          <button class="search-but" id="search-but">Search</button>
+                      </div>
+                  </div>
+                </div>
+              </header>
+              <div id="warning"></div>
+              <main class="main-section">
+                  <div class="center">
+                      <h2>Flight Statisctics on <span id="picked-date"></span></h2>
+                  </div>
+                  <section class="stats">
+                      <div class="stats-section" id="Departure">
+                          <div class="center">
+                              <h3 class="section-header">Departure</h3>
+                          </div>
+                          <table class="header-info">
+                              <tr>
+                                <td><b>Total Flights</b></td>
+                                <td><span id="total-flightsdep"></span></td>
+                              </tr>
+                              <tr>
+                                <td><b>Destinations</b></td>
+                                <td><span id="totaldest"></span></td>
+                              </tr>
+                              <tr>
+                                <td><b>Special Cases</b></td>
+                                <td><span id="depspecial"></span></td>
+                              </tr>
+                          </table>
+                          <div>
+                              <h4>Departure Time</h4>
+                          </div>
+                          <div class="histogram" id="histogramdep">
+                              
+                          </div>
+                          <div>
+                              <div class="center">
+                                  <h3 class="section-header">Top Ten Destinations</h3>
+                              </div>
+                              <table class="toptendata">
+                                  <thead>
+                                      <tr>
+                                          <th></th>
+                                          <th>Airport</th>
+                                          <th>No. of Flights</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody id="toptendatadep">
+          
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                      <div class="stats-section" id="Arrival">
+                          <div class="center">
+                              <h3 class="section-header">Arrival</h3>
+                          </div>
+                          <table class="header-info">
+                              <tr>
+                                <td><b>Total Flights</b></td>
+                                <td><span id="total-flightsarr"></span></td>
+                              </tr>
+                              <tr>
+                                <td><b>Origins</b></td>
+                                <td><span id="totalorg"></span></td>
+                              </tr>
+                              <tr>
+                                <td><b>Special Cases</b></td>
+                                <td><span id="arrspecial"></span></td>
+                              </tr>
+                          </table>
+                          <div>
+                              <h4>Arrival Time</h4>
+                          </div>
+                          <div class="histogram" id="histogramarr">
+                              
+                          </div>
+                          <div>
+                              <div class="center">
+                                  <h3 class="section-header">Top Ten Origins</h3>
+                              </div>
+                              <table class="toptendata">
+                                  <thead>
+                                      <tr>
+                                          <th></th>
+                                          <th>Airport</th>
+                                          <th>No. of Flights</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody id="toptendataarr">
+          
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+                  </section>
+              </main>
+        </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
